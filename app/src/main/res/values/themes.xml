@@ -1,0 +1,102 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.ToDoList" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/color_back_primary</item>
+        <item name="colorPrimaryVariant">@color/color_back_primary</item>
+        <item name="colorOnPrimary">@color/color_label_primary</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/color_secondary</item>
+        <item name="colorOnSecondary">@color/color_on_secondary</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+
+    <!-- My themes. -->
+    <style name="appBarLayout" parent="ThemeOverlay.AppCompat.DayNight">
+        <item name="colorSurface">@color/color_back_primary</item>
+    </style>
+
+    <style name="toolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="colorControlNormal">@color/color_label_primary</item>
+        <item name="homeAsUpIndicator">@drawable/ic_close</item>
+    </style>
+
+    <style name="expandedAppBar" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">@dimen/text_size_expanded_app_bar</item>
+        <item name="android:textColor">@color/color_label_primary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="collapsedAppBar" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">@dimen/text_size_collapsed_app_bar</item>
+        <item name="android:textColor">@color/color_label_primary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="checkBoxColorNormal" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/color_control_normal</item>
+        <item name="colorControlActivated">@color/color_control_activated</item>
+    </style>
+
+    <style name="recyclerViewButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">@drawable/ripple_effect</item>
+    </style>
+
+    <style name="primaryText">
+        <item name="android:textColor">@color/color_label_primary</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+    </style>
+
+    <style name="secondaryText">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/color_secondary</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+    </style>
+
+    <style name="tertiaryText">
+        <item name="android:textColor">@color/color_label_tertiary</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+    </style>
+
+    <style name="importanceLowText">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/color_importance_low</item>
+        <item name="android:textSize">@dimen/text_size_large</item>
+    </style>
+
+    <style name="importanceHighText">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/color_importance_high</item>
+        <item name="android:textSize">@dimen/text_size_large</item>
+    </style>
+
+    <style name="importanceDisableText">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/color_importance_disable</item>
+        <item name="android:textSize">@dimen/text_size_large</item>
+    </style>
+
+    <style name="menuImportanceNormalText" parent="@android:style/Widget.PopupMenu">
+        <item name="android:textColor">@color/color_label_primary</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+    </style>
+
+    <style name="dateNormalText">
+        <item name="android:textColor">@color/color_date_normal</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+
+    <style name="dateDisableText">
+        <item name="android:textColor">@color/color_date_disable</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+
+</resources>

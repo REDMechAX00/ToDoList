@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name" translatable="false">ToDo List</string>
+
+    <string name="text_completed">Completed — </string>
+    <string name="text_toolbar_title">To-do list</string>
+    <string name="text_ok">OK</string>
+    <string name="text_cancel">Cancel</string>
+    <string name="text_save">SAVE</string>
+
+    <string name="text_item_importance_no">No</string>
+    <string name="text_item_importance_low">Low</string>
+    <string name="text_item_importance_high">!! High</string>
+    <string name="text_item_importance">Importance</string>
+    <string name="text_item_desc_hint">What need to do…</string>
+    <string name="text_item_delete">Delete</string>
+    <string name="text_item_deadline">Do it by</string>
+    <string name="text_item_new">New</string>
+
+    <string name="text_item_importance_high_symbol">!!</string>
+    <string name="text_item_importance_low_symbol">⬇</string>
+
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--AppBarLayout-->
+    <dimen name="app_bar_layout_height">160dp</dimen>
+    <dimen name="expanded_toolbar_text_margin_start">60dp</dimen>
+    <dimen name="expanded_title_margin_bottom">60dp</dimen>
+    <dimen name="expanded_subtitle_margin_bottom">20dp</dimen>
+
+    <dimen name="text_size_expanded_app_bar">40sp</dimen>
+    <dimen name="text_size_collapsed_app_bar">25sp</dimen>
+
+    <!--App-->
+    <dimen name="ripple_effect_radius">4dp</dimen>
+    <dimen name="app_indents">10dp</dimen>
+    <dimen name="app_small_indents">2dp</dimen>
+    <dimen name="image_size">50dp</dimen>
+    <dimen name="image_size_toolbar">30dp</dimen>
+    <dimen name="image_padding">10dp</dimen>
+    <dimen name="fab_margin">20dp</dimen>
+    <dimen name="app_elevation">4dp</dimen>
+
+    <dimen name="text_size_large">24sp</dimen>
+    <dimen name="text_size_normal">18sp</dimen>
+    <dimen name="text_size_small">16sp</dimen>
+
+    <dimen name="item_base_vertical_padding">6dp</dimen>
+    <dimen name="item_desc_height">95dp</dimen>
+    <dimen name="item_corners">8dp</dimen>
+    <dimen name="item_text_margin_top">12dp</dimen>
+    <dimen name="tasks_item_vertical_indent">15dp</dimen>
+    <dimen name="tasks_item_horizontal_indent">15dp</dimen>
+    <dimen name="separator_height">1dp</dimen>
+
+</resources>

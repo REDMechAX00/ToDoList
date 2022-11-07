@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_base_item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_middle_bg"
+    android:paddingTop="@dimen/item_base_vertical_padding"
+    android:paddingBottom="@dimen/item_base_vertical_padding">
+
+    <TextView
+        android:id="@+id/main_base_item_text_importance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:paddingEnd="@dimen/app_indents"
+        app:layout_constraintStart_toEndOf="@id/main_base_item_check"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/main_base_item_text"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/item_text_margin_top"
+        android:layout_marginEnd="@dimen/app_indents"
+        android:ellipsize="end"
+        android:justificationMode="inter_word"
+        android:maxLines="3"
+        android:text="Hello"
+        android:theme="@style/primaryText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/main_base_item_text_importance"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/main_base_item_text_deadline"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/app_indents"
+        android:theme="@style/dateNormalText"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/main_base_item_check"
+        app:layout_constraintTop_toBottomOf="@+id/main_base_item_text" />
+
+    <CheckBox
+        android:id="@+id/main_base_item_check"
+        android:layout_width="@dimen/image_size"
+        android:layout_height="@dimen/image_size"
+        android:theme="@style/checkBoxColorNormal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

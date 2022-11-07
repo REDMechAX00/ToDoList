@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text_completed">Выполнено — </string>
+    <string name="text_toolbar_title">Мои дела</string>
+    <string name="text_item_desc_hint">Что надо сделать…</string>
+    <string name="text_item_importance">Важность</string>
+    <string name="text_ok">Готово</string>
+    <string name="text_cancel">Отмена</string>
+    <string name="text_save">СОХРАНИТЬ</string>
+
+    <string name="text_item_importance_no">Нет</string>
+    <string name="text_item_importance_low">Низкая</string>
+    <string name="text_item_importance_high">!! Высокая</string>
+    <string name="text_item_delete">Удалить</string>
+    <string name="text_item_deadline">Сделать до</string>
+    <string name="text_item_new">Новое</string>
+
+    <string name="text_item_importance_high_symbol">!!</string>
+    <string name="text_item_importance_low_symbol">⬇</string>
+
+</resources>

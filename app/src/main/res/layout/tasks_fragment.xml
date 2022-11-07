@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_app_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_back_primary"
+    tools:context=".ui.tasks.TasksFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tasks_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:title=""
+        app:theme="@style/toolbarTheme"
+        android:elevation="@dimen/app_elevation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tasks_toolbar_btn_save"
+            style="@style/secondaryText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center|end"
+            android:layout_gravity="end"
+            android:padding="@dimen/app_indents"
+            android:layout_marginEnd="@dimen/tasks_item_horizontal_indent"
+            android:text="@string/text_save" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tasks_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingTop="@dimen/app_indents"
+        android:paddingBottom="@dimen/app_indents"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tasks_toolbar" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

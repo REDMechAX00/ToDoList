@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Support-->
+    <color name="separator">#33FFFFFF</color>
+    <color name="overlay">#52000000</color>
+
+    <!--Label-->
+    <color name="color_label_primary">#FFFFFF</color>
+    <color name="color_label_secondary">#99FFFFFF</color>
+    <color name="color_label_tertiary">#66FFFFFF</color>
+    <color name="color_label_disable">#26FFFFFF</color>
+
+    <!--Back-->
+    <color name="color_back_primary">#161618</color>
+    <color name="color_back_secondary">#252528</color>
+    <color name="color_back_elevated">#3C3C3F</color>
+
+    <!--Colors-->
+    <color name="color_red">#FF453A</color>
+    <color name="color_orange">#CC7A00</color>
+    <color name="color_green">#32D74B</color>
+    <color name="color_blue">#0A84FF</color>
+    <color name="color_gray">#8E8E93</color>
+    <color name="color_gray_light">#48484A</color>
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_transparent">#00000000</color>
+
+    <!--Importance-->
+    <color name="color_importance_no">@color/color_label_tertiary</color>
+    <color name="color_importance_low">@color/color_gray</color>
+    <color name="color_importance_high">@color/color_red</color>
+    <color name="color_importance_disable">@color/color_label_tertiary</color>
+
+    <!--Date-->
+    <color name="color_date_normal">@color/color_blue</color>
+    <color name="color_date_disable">@color/color_label_tertiary</color>
+
+    <!--Buttons-->
+    <color name="color_secondary">@color/color_blue</color>
+    <color name="color_on_secondary">@color/color_white</color>
+
+    <!--Control-->
+    <color name="color_control_normal">@color/color_gray</color>
+    <color name="color_control_increased">@color/color_red</color>
+    <color name="color_control_activated">@color/color_green</color>
+
+    <!--Action-->
+    <color name="color_action_delete">@color/color_red</color>
+    <color name="color_action_restore">@color/color_orange</color>
+    <color name="color_action_success">@color/color_green</color>
+
+</resources>
