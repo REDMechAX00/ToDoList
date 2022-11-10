@@ -12,7 +12,7 @@
     <color name="color_label_disable">#26000000</color>
 
     <!--Back-->
-    <color name="color_back_primary">#F7F6F2</color>
+    <color name="color_back_primary">#F1EFE7</color>
     <color name="color_back_secondary">#FFFFFFFF</color>
     <color name="color_back_elevated">#FFFFFFFF</color>
 

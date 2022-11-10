@@ -1,11 +1,10 @@
 package com.redmechax00.todolist.ui.tasks
 
+import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
-import android.text.SpannableString
-import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -25,12 +24,12 @@ import androidx.recyclerview.widget.SimpleItemAnimator
 import com.redmechax00.todolist.App
 import com.redmechax00.todolist.R
 import com.redmechax00.todolist.databinding.TasksFragmentBinding
-import com.redmechax00.todolist.ui.Contract
-import com.redmechax00.todolist.ui.TodoItemsViewModel
 import com.redmechax00.todolist.recycler_view.OnItemClickListener
 import com.redmechax00.todolist.recycler_view.holders.tasks.HolderDeadlineItem
 import com.redmechax00.todolist.recycler_view.holders.tasks.HolderDescItem
 import com.redmechax00.todolist.recycler_view.views.ItemView
+import com.redmechax00.todolist.ui.Contract
+import com.redmechax00.todolist.ui.TodoItemsViewModel
 import com.redmechax00.todolist.utils.*
 import java.util.*
 
@@ -158,27 +157,14 @@ class TasksFragment : Fragment(), Contract.TasksView, OnItemClickListener,
             popupItems.find { it.itemId == R.id.menu_item_importance_low }
         val popupItemImportanceHigh: MenuItem? =
             popupItems.find { it.itemId == R.id.menu_item_importance_high }
+
         val textNo =
-            SpannableString(popupItemImportanceNo?.title)
-        textNo.setSpan(
-            ForegroundColorSpan(
-                App.Colors.get(R.color.color_importance_no)
-            ), 0, textNo.length, 0
-        )
+            getColoredText(popupItemImportanceNo?.title.toString(), R.color.color_importance_no)
         val textLow =
-            SpannableString(popupItemImportanceLow?.title)
-        textLow.setSpan(
-            ForegroundColorSpan(
-                App.Colors.get(R.color.color_importance_low)
-            ), 0, textLow.length, 0
-        )
+            getColoredText(popupItemImportanceLow?.title.toString(), R.color.color_importance_low)
         val textHigh =
-            SpannableString(popupItemImportanceHigh?.title)
-        textHigh.setSpan(
-            ForegroundColorSpan(
-                App.Colors.get(R.color.color_importance_high)
-            ), 0, textHigh.length, 0
-        )
+            getColoredText(popupItemImportanceHigh?.title.toString(), R.color.color_importance_high)
+
         popupItemImportanceNo?.title = textNo
         popupItemImportanceLow?.title = textLow
         popupItemImportanceHigh?.title = textHigh
@@ -212,19 +198,9 @@ class TasksFragment : Fragment(), Contract.TasksView, OnItemClickListener,
         }, currentYear, currentMonth, currentDay)
 
         val textPositive =
-            SpannableString(getString(R.string.text_ok))
-        textPositive.setSpan(
-            ForegroundColorSpan(
-                App.Colors.get(R.color.color_secondary)
-            ), 0, textPositive.length, 0
-        )
+            getColoredText(App.Strings.get(R.string.text_ok), R.color.color_secondary)
         val textNegative =
-            SpannableString(getString(R.string.text_cancel))
-        textNegative.setSpan(
-            ForegroundColorSpan(
-                App.Colors.get(R.color.color_secondary)
-            ), 0, textNegative.length, 0
-        )
+            getColoredText(App.Strings.get(R.string.text_cancel), R.color.color_secondary)
 
         dpd.setButton(DatePickerDialog.BUTTON_POSITIVE, textPositive, dpd)
         dpd.setButton(DialogInterface.BUTTON_NEGATIVE, textNegative) { _, which ->
@@ -234,6 +210,63 @@ class TasksFragment : Fragment(), Contract.TasksView, OnItemClickListener,
         }
 
         dpd.show()
+    }
+
+    override fun showCloseDialog() {
+        val textMessage = App.Strings.get(R.string.text_close_task)
+        val textPositive = App.Strings.get(R.string.text_leave)
+        val textNegative = App.Strings.get(R.string.text_cancel)
+
+        createAlertDialog(textMessage,textNegative,textPositive){ action ->
+            when(action){
+                AlertDialog.BUTTON_POSITIVE -> {
+                    presenter.onCloseDialogPositiveClick()
+                }
+            }
+        }
+    }
+
+    override fun showDeleteDialog() {
+        val textMessage = App.Strings.get(R.string.text_delete_task)
+        val textPositive = App.Strings.get(R.string.text_yes)
+        val textNegative = App.Strings.get(R.string.text_no)
+
+        createAlertDialog(textMessage,textNegative,textPositive){ action ->
+            when(action){
+                AlertDialog.BUTTON_POSITIVE -> {
+                    presenter.onDeleteDialogPositiveClick()
+                }
+            }
+        }
+    }
+
+    private fun createAlertDialog(
+        message: String,
+        negative: String,
+        positive: String,
+        onClick: (action: Int) -> Unit
+    ) {
+        val builder: AlertDialog.Builder = AlertDialog.Builder(context)
+        builder.setMessage(message)
+        builder.setCancelable(true)
+
+        val textNegative =
+            getColoredText(negative, R.color.color_secondary)
+        val textPositive =
+            getColoredText(positive, R.color.color_secondary)
+
+        builder.setNegativeButton(textNegative) { dialog, _ ->
+            onClick(AlertDialog.BUTTON_NEGATIVE)
+            dialog.cancel()
+        }
+
+        builder.setPositiveButton(textPositive) { dialog, _ ->
+            onClick(AlertDialog.BUTTON_POSITIVE)
+            dialog.cancel()
+        }
+
+        val alert: AlertDialog = builder.create()
+        alert.show()
     }
 
     override fun onDestroyView() {

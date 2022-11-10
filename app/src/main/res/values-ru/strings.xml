@@ -5,6 +5,11 @@
     <string name="text_item_desc_hint">Что надо сделать…</string>
     <string name="text_item_importance">Важность</string>
     <string name="text_ok">Готово</string>
+    <string name="text_yes">Да</string>
+    <string name="text_no">Нет</string>
+    <string name="text_close_task">Вы действительно хотите выйти? Все изменения будут потеряны</string>
+    <string name="text_delete_task">Удалить задачу?</string>
+    <string name="text_leave">Выйти</string>
     <string name="text_cancel">Отмена</string>
     <string name="text_save">СОХРАНИТЬ</string>
 

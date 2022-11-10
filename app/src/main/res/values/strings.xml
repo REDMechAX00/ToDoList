@@ -4,6 +4,11 @@
     <string name="text_completed">Completed — </string>
     <string name="text_toolbar_title">To-do list</string>
     <string name="text_ok">OK</string>
+    <string name="text_yes">Yes</string>
+    <string name="text_no">No</string>
+    <string name="text_close_task">Do you really want to leave? All changes will be lost</string>
+    <string name="text_delete_task">Do you want to delete a task?</string>
+    <string name="text_leave">Leave</string>
     <string name="text_cancel">Cancel</string>
     <string name="text_save">SAVE</string>
 

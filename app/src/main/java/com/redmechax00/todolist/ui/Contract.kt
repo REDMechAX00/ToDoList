@@ -101,6 +101,10 @@ interface Contract {
         fun showImportancePopupMenu(holder: RecyclerView.ViewHolder)
 
         fun showDeadlineDatePickerDialog(c: Calendar)
+
+        fun showCloseDialog()
+
+        fun showDeleteDialog()
     }
 
     interface TasksPresenter {
@@ -129,6 +133,10 @@ interface Contract {
         fun onImportancePopupMenuLowClick()
 
         fun onImportancePopupMenuHighClick()
+
+        fun onCloseDialogPositiveClick()
+
+        fun onDeleteDialogPositiveClick()
 
         fun onDestroy()
     }

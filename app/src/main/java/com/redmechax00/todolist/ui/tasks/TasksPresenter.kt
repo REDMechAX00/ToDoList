@@ -30,7 +30,7 @@ class TasksPresenter(
     }
 
     override fun onClosePressed() {
-        view.popBackStack()
+        view.showCloseDialog()
     }
 
     override fun onSavePressed() {
@@ -65,16 +65,7 @@ class TasksPresenter(
     }
 
     override fun onItemDeleteClick() {
-        val editedItemId = model.getEditedItem()?.itemId
-        val visibleData = model.getVisibleData()
-
-        val deletedItem = visibleData.find { it.itemId == editedItemId }
-        if (deletedItem != null) {
-            visibleData.remove(deletedItem)
-            model.saveData(visibleData, model.getHiddenData())
-        }
-
-        view.popBackStack()
+        view.showDeleteDialog()
     }
 
     override fun onImportancePopupMenuNoClick() {
@@ -118,6 +109,29 @@ class TasksPresenter(
         editedItem?.itemDeadline = -1
         model.setEditedItem(editedItem)
     }
+
+    override fun onCloseDialogPositiveClick() {
+        view.popBackStack()
+    }
+
+    override fun onDeleteDialogPositiveClick() {
+        deleteEditedItem()
+    }
+
+    private fun deleteEditedItem(){
+        val editedItemId = model.getEditedItem()?.itemId
+        val visibleData = model.getVisibleData()
+
+        val deletedItem = visibleData.find { it.itemId == editedItemId }
+        if (deletedItem != null) {
+            visibleData.remove(deletedItem)
+            model.saveData(visibleData, model.getHiddenData())
+        }
+
+        view.popBackStack()
+    }
+
+
 
     private fun initData() {
         var editedItem: ViewBase? = model.getEditedItem()

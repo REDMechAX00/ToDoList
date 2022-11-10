@@ -34,7 +34,7 @@ class TodoItemsViewModel : ViewModel(), Contract.Model {
         repository.getItems(itemDao) {
             splitData(it) { visibleData, hiddenData ->
                 this.hiddenData = hiddenData
-                visibleDataLiveMutable.value = visibleData
+                visibleDataLiveMutable.value = updateItemsBackground(visibleData)
             }
         }
     }

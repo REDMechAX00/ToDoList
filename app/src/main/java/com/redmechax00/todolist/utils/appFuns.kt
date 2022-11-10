@@ -1,8 +1,11 @@
 package com.redmechax00.todolist.utils
 
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.redmechax00.todolist.App
 import com.redmechax00.todolist.R
 import java.text.DateFormat
 import java.text.SimpleDateFormat
@@ -51,4 +54,15 @@ fun getDateFromTime(time: Long): String {
     val df: DateFormat =
         DateFormat.getDateInstance(DateFormat.LONG, Locale.getDefault())
     return df.format(date)
+}
+
+fun getColoredText(str: String, colorRes: Int): SpannableString {
+    val text =
+        SpannableString(str)
+    text.setSpan(
+        ForegroundColorSpan(
+            App.Colors.get(colorRes)
+        ), 0, text.length, 0
+    )
+    return text
 }
